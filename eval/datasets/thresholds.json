@@ -1,0 +1,13 @@
+{
+  "recall@5": 0.75,
+  "mrr@5": 0.70,
+  "ndcg@5": 0.70,
+  "citation_precision": 0.60,
+  "p95_ms": 5000.0,
+  "overrides": {
+    "ollama": {
+      "p95_ms": 30000.0
+    }
+  },
+  "note": "质量类指标要求不低于阈值，延迟类指标要求不高于阈值。overrides 按 provider 覆盖：本地 CPU 小模型的生成本身就是秒级，用同一档延迟门槛会误判为失败。CI 门禁请使用默认档（离线 hash 嵌入 + mock）。"
+}

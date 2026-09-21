@@ -1,0 +1,37 @@
+.trace-grid {
+  display: grid; grid-template-columns: 320px 1fr; gap: var(--s-4);
+  padding: var(--s-6); flex: 1; overflow: hidden;
+}
+.trace-list { overflow: hidden; }
+.trace-items {
+  list-style: none; margin: var(--s-2) 0 0; padding: 0; display: flex;
+  flex-direction: column; gap: var(--s-2); overflow-y: auto;
+}
+.trace-row {
+  width: 100%; text-align: left; background: transparent; border: 1px solid var(--border);
+  border-radius: var(--r); padding: var(--s-3); color: var(--text);
+}
+.trace-row:hover { border-color: var(--border-strong); }
+.trace-row.active { border-color: var(--accent-border); background: var(--accent-soft); }
+.trace-query { font-size: 13px; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-bottom: 2px; }
+.trace-detail { overflow-y: auto; }
+
+.waterfall { height: 100%; }
+.wf-rows { display: flex; flex-direction: column; gap: var(--s-1); margin-top: var(--s-2); }
+.wf-row { display: grid; grid-template-columns: 200px 1fr; gap: var(--s-3); align-items: center; }
+.wf-label { display: flex; flex-direction: column; overflow: hidden; }
+.wf-name { font-size: 13px; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.wf-track { position: relative; height: 22px; background: var(--bg-base); border-radius: var(--r-sm); }
+.wf-bar {
+  position: absolute; top: 3px; height: 16px; background: var(--accent);
+  border-radius: var(--r-sm); min-width: 2px; opacity: 0.85; cursor: pointer;
+}
+.wf-bar:hover { opacity: 1; }
+.wf-detail {
+  margin-top: var(--s-4); border: 1px solid var(--border); border-radius: var(--r);
+  padding: var(--s-3); background: var(--bg-base);
+}
+.wf-detail-head { font-weight: 600; color: var(--accent); margin-bottom: var(--s-2); }
+.wf-attrs { margin-top: var(--s-2); display: grid; grid-template-columns: 160px 1fr; gap: var(--s-1) var(--s-3); }
+.attr-k { font-family: var(--mono); font-size: 12px; color: var(--text-subtle); }
+.attr-v { font-family: var(--mono); font-size: 12px; color: var(--text); word-break: break-all; }

@@ -1,0 +1,8 @@
+# 开发依赖（精确锁版）
+# 生成日期：2026-09-22  作者：晨星
+pytest==9.1.1
+pytest-asyncio==1.4.0
+pytest-cov==7.0.0
+ruff==0.16.8
+mypy==2.3.1
+types-PyYAML==6.0.12.20260906

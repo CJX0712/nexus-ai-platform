@@ -1,0 +1,34 @@
+[project]
+name = "nexus-ai-platform"
+version = "0.1.0"
+description = "端到端可插拔 AI 系统：RAG + Agent + 混合检索 + 重排守卫 + 回归评测 + 链路追踪"
+authors = [{ name = "晨星" }]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.13"
+
+[tool.ruff]
+line-length = 120
+target-version = "py313"
+extend-exclude = ["packages/web", "data", ".venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "RUF"]
+ignore = [
+  "E402",    # 脚本与测试需要先设置 sys.path，属于刻意的导入顺序
+  "B008",    # FastAPI 依赖注入惯用法（函数调用作为默认值）
+  "RUF001",  # 中文全角标点会被误判为「歧义字符」，本项目内容以中文为主
+  "RUF002",
+  "RUF003",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/*" = ["E402"]
+"packages/core/tests/*" = ["E402"]
+
+[tool.mypy]
+python_version = "3.13"
+ignore_missing_imports = true
+warn_unused_ignores = false
+check_untyped_defs = false
+exclude = ["packages/web/", "data/"]

@@ -1,0 +1,15 @@
+# 可选重型依赖（按需安装）
+#
+# 说明：核心链路完全不依赖这里的任何包。
+# 只有在需要以下能力时才安装，且必须接受更大的体积与安装时间：
+#
+#   pip install -r requirements-ml.txt
+#
+# 用途：
+#   1. CrossEncoderReranker —— 用真正的交叉编码器做精排
+#   2. 本地 sentence-transformers 嵌入（若不想通过 Ollama 提供嵌入）
+#
+# Windows 注意事项：torch 的 CPU 版本体积约 200MB+，请先确认磁盘空间。
+# 若本机已安装 Ollama，推荐走 services 方式（bge-m3），不必安装本文件。
+sentence-transformers==5.2.0
+torch==2.10.0

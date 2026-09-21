@@ -1,0 +1,52 @@
+:root {
+  /* 背景层级（深色，近 #0B0F14 系） */
+  --bg-base: #0b0f14;
+  --bg-elev: #11171f;
+  --bg-surface: #161d27;
+  --bg-input: #0f151c;
+
+  /* 边框 */
+  --border: #232c39;
+  --border-strong: #313c4d;
+
+  /* 文本（中性灰阶） */
+  --text: #e6ebf2;
+  --text-muted: #9aa7b8;
+  --text-subtle: #6b7889;
+
+  /* 强调色：单一青色，不引入第二色相 */
+  --accent: #2dd4bf;
+  --accent-hover: #14b8a6;
+  --accent-soft: rgba(45, 212, 191, 0.12);
+  --accent-border: rgba(45, 212, 191, 0.35);
+
+  /* 状态色（功能性，非装饰） */
+  --ok: #34d399;
+  --bad: #f87171;
+  --warn: #fbbf24;
+
+  /* 圆角体系：8px 主体 */
+  --r-sm: 4px;
+  --r: 8px;
+  --r-lg: 12px;
+
+  /* 间距：4 的倍数 */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+
+  /* 字体栈：系统与中文混合 */
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN",
+    "Noto Sans CJK SC", Roboto, Helvetica, Arial, sans-serif;
+  --mono: "SF Mono", "JetBrains Mono", "Fira Code", Menlo, Consolas,
+    "Liberation Mono", monospace;
+
+  /* 缓动：无弹跳 */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur: 0.16s;
+}

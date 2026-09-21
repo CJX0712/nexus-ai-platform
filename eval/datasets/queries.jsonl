@@ -1,0 +1,12 @@
+{"query":"混合检索为什么要做 RRF 融合","relevant_doc_ids":["hybrid-retrieval"],"reference_answer":"因为 BM25 与向量的分数量纲不同，直接加权需要归一化且会随语料漂移，RRF 只用名次信息因而稳定。","notes":"守住「融合理由」这条核心语义"}
+{"query":"关键词精确匹配靠哪一路检索","relevant_doc_ids":["hybrid-retrieval"],"reference_answer":"靠 BM25 稀疏检索，它对型号、参数、专有名词这类必须逐字命中的查询敏感。","notes":"稀疏通道的定位"}
+{"query":"英文重排器处理中文查询会怎样","relevant_doc_ids":["rerank-guard"],"reference_answer":"会给出近似随机的分数并覆盖其他信号，导致 top-1 命中明显下降，因此需要语言守卫降级。","notes":"这是本项目最重要的经验点"}
+{"query":"怎么判断是不是重排的语言错配","relevant_doc_ids":["rerank-guard"],"reference_answer":"对比一小批中文查询在重排前后的 top-1 命中率，若重排后明显更低则基本可判定语言错配。","notes":"可操作的排查方法"}
+{"query":"什么时候不应该启用重排","relevant_doc_ids":["rerank-guard"],"reference_answer":"低延迟场景或查询语言与模型不匹配时不启用，候选过多时先缩到二十条以内再精排。","notes":"延迟与质量的权衡"}
+{"query":"内存向量库适合什么场景","relevant_doc_ids":["vector-store"],"reference_answer":"适合单机、小数据量、需要最少依赖和最快启动的场景，也适合作为测试默认后端。","notes":"默认实现的定位"}
+{"query":"HNSW 和 IVF 各自代价是什么","relevant_doc_ids":["vector-store"],"reference_answer":"HNSW 查询快但内存占用高、构建慢；IVF 内存友好但要合理设置桶数以平衡速度与召回。","notes":"索引结构权衡"}
+{"query":"切片重叠率是不是越高越好","relevant_doc_ids":["chunking"],"reference_answer":"不是，过高会让相邻分片高度相似，浪费上下文并给用户重复感，建议保留百分之十五到二十五。","notes":"反直觉结论"}
+{"query":"为什么切片 id 必须稳定","relevant_doc_ids":["chunking"],"reference_answer":"否则评测集里记录的期望命中编号会失效，回归测试无法复用，同一份语料反复摄入的结果也不再可比。","notes":"可评测性前提"}
+{"query":"Agent 解析不出工具调用时应该怎么办","relevant_doc_ids":["agent-loop"],"reference_answer":"不要报错，把当前输出当作最终答案返回，使系统退化为一问一答而不是崩溃。","notes":"鲁棒性的关键设计"}
+{"query":"工具执行失败会影响主循环吗","relevant_doc_ids":["agent-loop"],"reference_answer":"不应该，工具异常要被收敛成一条 Observation，让模型知道失败并尝试换方案。","notes":"隔离原则"}
+{"query":"为什么要给 Agent 设置步数上限","relevant_doc_ids":["agent-loop"],"reference_answer":"模型可能循环重试或来回跳转直到耗尽预算，步数上限必须硬性存在并在到达时收敛返回。","notes":"失控防护"}
