@@ -1,5 +1,12 @@
 # nexus-ai-platform
 
+<p align="center">
+  <a href="https://github.com/CJX0712/nexus-ai-platform/actions/workflows/ci.yml"><img src="https://github.com/CJX0712/nexus-ai-platform/actions/workflows/ci.yml/badge.svg" alt="ci"></a>
+  <a href="https://github.com/CJX0712/nexus-ai-platform/releases"><img src="https://img.shields.io/github/v/release/CJX0712/nexus-ai-platform?sort=semver" alt="release"></a>
+  <a href="https://github.com/CJX0712/nexus-ai-platform/blob/main/LICENSE"><img src="https://img.shields.io/github/license/CJX0712/nexus-ai-platform" alt="license"></a>
+  <img src="https://img.shields.io/badge/author-%E6%99%A8%E6%98%9F-1f6feb" alt="author">
+</p>
+
 端到端可插拔 AI 系统：**RAG 检索增强生成 + Tool-Calling Agent + 混合检索 + 重排守卫 + 回归评测 + 链路追踪 + Web 控制台**。
 
 不是 demo，是一套能在干净环境里一键复现、每个模块都能独立验证、且可以真的用本地模型跑起来完整链路的系统。核心依赖只有 9 个纯 Wheel 包，全部零编译。
