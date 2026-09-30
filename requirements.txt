@@ -2,7 +2,7 @@
 # 生成日期：2026-09-22  作者：晨星
 # 说明：仅包含 Windows / Linux / macOS 均提供预编译 wheel 的包，干净环境可一键复现
 fastapi==0.141.1
-uvicorn==0.53.0
+uvicorn==0.54.0
 pydantic==2.13.5
 pydantic-settings==2.15.0
 httpx==0.28.1

@@ -12,4 +12,4 @@
 # Windows 注意事项：torch 的 CPU 版本体积约 200MB+，请先确认磁盘空间。
 # 若本机已安装 Ollama，推荐走 services 方式（bge-m3），不必安装本文件。
 sentence-transformers==5.2.0
-torch==2.10.0
+torch==2.14.0
